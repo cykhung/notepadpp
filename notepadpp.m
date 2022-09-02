@@ -1,7 +1,12 @@
 function notepadpp(filenames)
 
-exe = fullfile('V:\khung\notepadpp\trunk\private\',                     ...
+
+%% Find notepad++
+exe = fullfile(fileparts(mfilename('fullpath')), 'private', ...
     'npp.8.2.portable.minimalist.x64', 'notepad++.exe');
+
+
+%% Open files.
 filenames = convert_filenames(filenames);
 for n = 1:numel(filenames)
     cmd = [exe, ' ',                            ...
@@ -10,5 +15,6 @@ for n = 1:numel(filenames)
         ];
     dos(cmd);
 end
+
 
 end
